@@ -27,6 +27,18 @@ const PRODUCTS = [
     precauciones: 'NO embarazo, lactancia, menores 18 años. Fotosensibilizante. Solo uso externo.'
   },
   {
+    id: 'aha-resurface',
+    category: 'serum',
+    image: 'imagenes/aha-resurface.png',
+    line: 'LÍNEA DERMOCOSMÉTICA',
+    type: 'SERUN AHA RESURFACE',
+    name: 'AHA RESURFACE 12%',
+    keywordsLabel: '3 PALABRAS:',
+    keywords: 'Uniformidad • Exfoliación • Resplandor',
+    modoUso: 'Solo noche, piel limpia y seca. 2-3 gotas rostro y cuello. No enjuagar. 2-3 noches/semana máximo. Test parche 24h antes.',
+    activos: 'Aqua, Glycolic Acid 7%, Lactic Acid 5%, Glycerin, Propylene Glycol, Sodium Hydroxide pH adjuster, Aloe Barbadensis Leaf Extract, Phenoxyethanol, Ethylhexylglycerin'
+  },
+  {
     id: 'glycolact',
     category: 'serum',
     image: 'imagenes/glycolact.png',
@@ -59,7 +71,7 @@ const PRODUCTS = [
   {
     id: 'clindasol',
     category: 'serum',
-    image: 'imagenes/clindasol.png',
+    image: 'imagenes/clindasol-forte.png',
     line: 'LÍNEA DERMOCOSMÉTICA',
     type: 'SERUN CLINDAMICINA',
     name: 'CLINDASOL 1% FORTE | Clindamycin Phosphate 1% | pH 5.5-6.5',
@@ -94,8 +106,12 @@ const PRODUCTS = [
     type: 'SERUN HYARON B3',
     name: 'HYARON B3 5%',
     keywordsLabel: '3 PALABRAS:',
-    keywords: 'Luminosidad • Tolerancia • Equilibrio',
-    pending: true
+    keywords: 'Luminosidad • Equilibrio • Tolerancia',
+    funcion: 'Comodín universal. Manchas, poros, sebo, barrera débil',
+    modoUso: 'Día y noche. Piel limpia y seca. 2-3 gotas rostro. Antes de crema hidratante. Compatible con todos los activos.',
+    activos: 'Aqua, Niacinamide 5%, Sodium Hyaluronate 1%, Glycerin, Propylene Glycol, Zinc PCA 0.5%, Panthenol 0.5%, Phenoxyethanol, Ethylhexylglycerin',
+    recomendaciones: 'SPF 50+ obligatorio día. Si pica leve al inicio es normal. Potencia retinoico/AHA/BHA. Resultados semana 4.',
+    precauciones: 'Solo uso externo. Evitar contacto directo ojos. No combinar Vit C pura misma hora.'
   },
   {
     id: 'panthrepair',
@@ -115,10 +131,10 @@ const PRODUCTS = [
   {
     id: 'codolux',
     category: 'serum',
-    image: 'imagenes/codolux.png',
+    image: 'imagenes/codolux-renew.png',
     line: 'LÍNEA DERMOCOSMÉTICA',
     type: 'SERUN PARA CODO',
-    name: 'CODOLUX | Glycolic Acid 8% + Urea 10% | pH 3.5-4.0',
+    name: 'CODOLUX RENEW | Glycolic Acid 8% + Urea 10% | pH 3.5-4.0',
     keywordsLabel: '3 PALABRAS:',
     keywords: 'Suavidad • Aclarado • Renovación',
     funcion: 'Solo cuerpo. Quita lo oscuro y grueso de codos/rodillas',

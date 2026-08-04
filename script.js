@@ -92,11 +92,11 @@ function renderModalContent(product) {
   const details = product.pending
     ? `<div class="modal-details modal-pending"><p>Descripción próximamente.</p></div>`
     : `<div class="modal-details">
-          <p><strong>Función:</strong> ${product.funcion}</p>
-          <p><strong>MODO DE USO:</strong> ${product.modoUso}</p>
-          <p><strong>ACTIVOS INCI:</strong> ${product.activos}</p>
-          <p><strong>RECOMENDACIONES:</strong> ${product.recomendaciones}</p>
-          <p><strong>PRECAUCIONES:</strong> ${product.precauciones}</p>
+          ${product.funcion ? `<p><strong>Función:</strong> ${product.funcion}</p>` : ''}
+          ${product.modoUso ? `<p><strong>MODO DE USO:</strong> ${product.modoUso}</p>` : ''}
+          ${product.activos ? `<p><strong>ACTIVOS INCI:</strong> ${product.activos}</p>` : ''}
+          ${product.recomendaciones ? `<p><strong>RECOMENDACIONES:</strong> ${product.recomendaciones}</p>` : ''}
+          ${product.precauciones ? `<p><strong>PRECAUCIONES:</strong> ${product.precauciones}</p>` : ''}
         </div>`;
 
   return `
