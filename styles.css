@@ -599,24 +599,52 @@ body {
   line-height: 1.4;
 }
 
-.product-keywords {
+.product-subtitle {
   font-size: 0.95rem;
-  color: var(--gold);
-  margin-bottom: 24px;
-  padding-bottom: 20px;
+  color: rgba(245, 240, 232, 0.9);
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+
+.product-block {
+  margin: 20px 0;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(201, 169, 98, 0.2);
 }
 
-.modal-details p {
+.product-block-title {
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+
+.product-beneficios {
+  list-style: none;
+  padding: 0;
+}
+
+.product-beneficios li {
+  margin-bottom: 8px;
+  color: rgba(245, 240, 232, 0.88);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.modal-info p {
   margin-bottom: 14px;
   color: rgba(245, 240, 232, 0.88);
   font-size: 0.92rem;
   line-height: 1.65;
 }
 
-.modal-details strong {
+.modal-info strong {
   color: var(--gold-light);
   font-weight: 500;
+}
+
+.product-extra {
+  color: var(--gold);
+  font-size: 0.92rem;
+  margin-top: 4px;
 }
 
 /* Contact */

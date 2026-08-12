@@ -8,6 +8,17 @@ const modalOverlay = document.getElementById('modal-overlay');
 const modalBody = document.getElementById('modal-body');
 const modalClose = document.getElementById('modal-close');
 
+function getCardName(product) {
+  const title = product.title.trim();
+  if (/^PERFECT SKIN\s*[-–]\s*/i.test(title)) {
+    return title.replace(/^PERFECT SKIN\s*[-–]\s*/i, '').trim();
+  }
+  if (/^PERFECT SKIN\s+/i.test(title)) {
+    return title.replace(/^PERFECT SKIN\s+/i, '').trim();
+  }
+  return title;
+}
+
 function initTabs() {
   tabsEl.innerHTML = CATEGORIES.map(cat => `
     <button
@@ -31,20 +42,17 @@ function initTabs() {
 }
 
 function renderProductCard(product) {
-  const shortName = product.name.split('|')[0].trim();
-  const keywords = product.keywords
-    ? `<p class="shop-card-keywords">${product.keywords}</p>`
-    : '';
+  const cardName = getCardName(product);
   return `
-    <article class="shop-card" data-id="${product.id}" tabindex="0" role="button" aria-label="Ver detalles de ${shortName}">
+    <article class="shop-card" data-id="${product.id}" tabindex="0" role="button" aria-label="Ver detalles de ${cardName}">
       <div class="shop-card-image">
-        <img src="${product.image}" alt="${product.name}">
+        <img src="${product.image}" alt="${product.title}">
         <span class="shop-card-hover">Ver detalles</span>
       </div>
       <div class="shop-card-info">
-        <p class="shop-card-type">${product.type}</p>
-        <h3 class="shop-card-name">${shortName}</h3>
-        ${keywords}
+        <p class="shop-card-type">PERFECT SKIN</p>
+        <h3 class="shop-card-name">${cardName}</h3>
+        <p class="shop-card-keywords">${product.subtitle}</p>
       </div>
     </article>
   `;
@@ -77,7 +85,7 @@ function renderProducts() {
 }
 
 function getWhatsAppUrl(product) {
-  const productName = product.name.split('|')[0].trim();
+  const productName = getCardName(product);
   const message = encodeURIComponent(
     `Hola, quiero comprar ${productName} de Perfect Skin.`
   );
@@ -85,25 +93,28 @@ function getWhatsAppUrl(product) {
 }
 
 function renderModalContent(product) {
-  const keywords = product.keywords
-    ? `<p class="product-keywords"><strong>${product.keywordsLabel}</strong> ${product.keywords}</p>`
+  const beneficios = product.beneficios
+    ? `<div class="product-block">
+        <p class="product-block-title"><strong>BENEFICIOS:</strong></p>
+        <ul class="product-beneficios">
+          ${product.beneficios.map(b => `<li>✓ ${b}</li>`).join('')}
+        </ul>
+      </div>`
     : '';
 
-  const details = product.pending
-    ? `<div class="modal-details modal-pending"><p>Descripción próximamente.</p></div>`
-    : `<div class="modal-details">
-          ${product.funcion ? `<p><strong>Función:</strong> ${product.funcion}</p>` : ''}
-          ${product.modoUso ? `<p><strong>MODO DE USO:</strong> ${product.modoUso}</p>` : ''}
-          ${product.activos ? `<p><strong>ACTIVOS INCI:</strong> ${product.activos}</p>` : ''}
-          ${product.recomendaciones ? `<p><strong>RECOMENDACIONES:</strong> ${product.recomendaciones}</p>` : ''}
-          ${product.precauciones ? `<p><strong>PRECAUCIONES:</strong> ${product.precauciones}</p>` : ''}
-        </div>`;
+  const subtitle2 = product.subtitle2
+    ? `<p class="product-subtitle">${product.subtitle2}</p>`
+    : '';
+
+  const extra = product.extra
+    ? `<p class="product-extra">${product.extra}</p>`
+    : '';
 
   return `
     <div class="modal-grid">
       <div class="modal-product">
         <div class="modal-image">
-          <img src="${product.image}" alt="${product.name}">
+          <img src="${product.image}" alt="${product.title}">
         </div>
         <a
           href="${getWhatsAppUrl(product)}"
@@ -113,11 +124,13 @@ function renderModalContent(product) {
         >Comprar</a>
       </div>
       <div class="modal-info">
-        <p class="product-line">${product.line}</p>
-        <h2 class="product-type" id="modal-title">${product.type}</h2>
-        <h3 class="product-name">${product.name}</h3>
-        ${keywords}
-        ${details}
+        <h2 class="product-type" id="modal-title">${product.title}</h2>
+        <p class="product-subtitle">${product.subtitle}</p>
+        ${subtitle2}
+        ${beneficios}
+        ${product.uso ? `<p><strong>USO:</strong> ${product.uso}</p>` : ''}
+        ${product.importante ? `<p><strong>IMPORTANTE:</strong> ${product.importante}</p>` : ''}
+        ${extra}
       </div>
     </div>
   `;
