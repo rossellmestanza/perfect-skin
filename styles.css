@@ -278,6 +278,59 @@ body {
   min-height: 60vh;
 }
 
+.category-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 24px 20px;
+  border: 1px solid rgba(201, 169, 98, 0.35);
+  background: rgba(201, 169, 98, 0.06);
+}
+
+.category-intro-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.category-intro-subline {
+  font-size: 0.88rem;
+  color: rgba(245, 240, 232, 0.75);
+  letter-spacing: 0.04em;
+}
+
+.shop-card-clinical {
+  font-size: 0.72rem;
+  color: rgba(201, 169, 98, 0.85);
+  margin-top: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.product-clinical-brand {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(201, 169, 98, 0.25);
+}
+
+.product-clinical-headline {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.product-clinical-subline {
+  font-size: 0.88rem;
+  color: rgba(245, 240, 232, 0.78);
+  letter-spacing: 0.03em;
+}
+
 .shop-header {
   margin-bottom: 40px;
 }
@@ -629,6 +682,18 @@ body {
   line-height: 1.55;
 }
 
+.product-steps {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: rgba(245, 240, 232, 0.88);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.product-steps li {
+  margin-bottom: 6px;
+}
+
 .modal-info p {
   margin-bottom: 14px;
   color: rgba(245, 240, 232, 0.88);
@@ -645,6 +710,22 @@ body {
   color: var(--gold);
   font-size: 0.92rem;
   margin-top: 4px;
+}
+
+.product-presentacion {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201, 169, 98, 0.25);
+  color: var(--gold-light);
+}
+
+.product-nota {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--gold);
+  background: rgba(201, 169, 98, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* Contact */

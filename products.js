@@ -1,13 +1,25 @@
 const WHATSAPP_NUMBER = '51999999999';
 
+const CLINICAL_COLLECTION = {
+  headline: 'PERFECT SKIN CLINICAL - PORTAFOLIO INYECTABLE ESTÉRIL 10 mL',
+  subline: 'Vial ámbar con tapa dorada - Uso Profesional Exclusivo'
+};
+
+const MAGISTRAL_COLLECTION = {
+  headline: 'PERFECT SKIN - COLECCIÓN FÓRMULA MAGISTRAL'
+};
+
+const CATEGORY_INTRO = {
+  'serum-coleccion': CLINICAL_COLLECTION,
+  coleccion: MAGISTRAL_COLLECTION
+};
+
 const CATEGORIES = [
   { id: 'serum', name: 'Sérum' },
+  { id: 'serum-coleccion', name: 'PERFECT SKIN CLINICAL' },
+  { id: 'coleccion', name: 'PERFECT SKIN - COLECCIÓN' },
   { id: 'cremas', name: 'Cremas' },
-  { id: 'bloqueador', name: 'Bloqueador' },
-  { id: 'jabon', name: 'Jabón' },
-  { id: 'tonico', name: 'Tónico' },
-  { id: 'limpiador', name: 'Limpiador' },
-  { id: 'exfoliante', name: 'Exfoliante' }
+  { id: 'jabon', name: 'Jabón' }
 ];
 
 const PRODUCTS = [
@@ -210,13 +222,244 @@ const PRODUCTS = [
     image: 'imagenes/cremas/resveratrol-retinoico.png',
     title: 'PERFECT SKIN - Resveratrol + Retinoico',
     subtitle: 'Anti-Edad 35+'
+  },
+  {
+    id: 'glow-bright',
+    category: 'serum-coleccion',
+    image: 'imagenes/serum-coleccion/glow-bright.png',
+    title: 'PERFECT SKIN - GLOW BRIGHT | SISTEMA DESPIGMENTANTE INTENSIVO',
+    subtitle: 'Sistema despigmentante intensivo',
+    composicion: 'Ácido Tranexámico (TXA) - Ácido Kójico - Ácido Fítico - Péptido de Cobre - Glutatión - Arbutina.',
+    mecanismo: 'Inhibe la melanogénesis en diferentes vías, bloquea la transferencia de melanosomas, regula la actividad tirosinasa y ejerce potente acción antioxidante y antiinflamatoria.',
+    indicacion: 'Hiperpigmentación, melasma epidérmico y mixto, hiperpigmentación post-inflamatoria (HPI), lentigos solares y discromías. Unificación del tono y efecto luminoso.',
+    resultado: 'Piel uniforme, luminosa y con tono visiblemente regulado.',
+    presentacion: 'Portafolio inyectable estéril 10 mL. Vial ámbar con tapa dorada. Uso microneedling estéril. Uso profesional exclusivo.'
+  },
+  {
+    id: 'lift-cobre',
+    category: 'serum-coleccion',
+    image: 'imagenes/serum-coleccion/lift-cobre.png',
+    title: 'PERFECT SKIN - LIFT COBRE | BIOESTIMULADOR Y REAFIRMANTE',
+    subtitle: 'Bioestimulador y reafirmante',
+    composicion: 'GHK-Cu (Péptido de Cobre).',
+    mecanismo: 'Péptido señal que estimula la síntesis de colágeno I, III, elastina y glicosaminoglicanos. Potente remodelador, reparador y angiogénico. Mejora la firmeza y la densidad dérmica.',
+    indicacion: 'Flacidez cutánea leve a moderada de rostro, cuello y escote, pérdida de turgencia, piel desvitalizada y protocolos de regeneración post-procedimiento.',
+    resultado: 'Efecto tensado, piel más firme, densa y revitalizada.',
+    presentacion: 'Portafolio inyectable estéril 10 mL. Vial ámbar con tapa dorada. Uso microneedling estéril. Uso profesional exclusivo.'
+  },
+  {
+    id: 'adn-glow',
+    category: 'serum-coleccion',
+    image: 'imagenes/serum-coleccion/adn-glow.png',
+    title: 'PERFECT SKIN - ADN GLOW | POLINUCLEÓTIDO + EXOSOMAS - SKIN BOOSTER',
+    subtitle: 'Polinucleótido + exosomas — skin booster',
+    composicion: 'PDRN (Polidesoxirribonucleótido) - Exosomas - Glutatión.',
+    mecanismo: 'Reparación y bioestimulación celular. El PDRN estimula la reparación del ADN y la proliferación de fibroblastos. Los exosomas actúan como mensajeros celulares para regeneración. Glutatión como antioxidante maestro para luminosidad.',
+    indicacion: 'Rejuvenecimiento global, fotoenvejecimiento, textura irregular, poro dilatado y apagamiento cutáneo. Protocolo Glow y efecto piel de porcelana.',
+    resultado: 'Hidratación profunda, textura refinada, luminosidad extrema y revitalización.',
+    presentacion: 'Portafolio inyectable estéril 10 mL. Vial ámbar con tapa dorada. Uso microneedling estéril. Uso profesional exclusivo.'
+  },
+  {
+    id: 'adn-intensive-repair',
+    category: 'serum-coleccion',
+    image: 'imagenes/serum-coleccion/adn-intensive-repair.png',
+    title: 'PERFECT SKIN - ADN INTENSIVE REPAIR | REPARADOR INTENSIVO POST-PROCEDIMIENTO',
+    subtitle: 'Reparador intensivo post-procedimiento',
+    composicion: 'PDRN - Exosomas - Centella Asiática.',
+    mecanismo: 'Sinergia regeneradora, antiinflamatoria y cicatrizante. Restaura la barrera cutánea, modula la inflamación, acelera la reepitelización y calma la reactividad vascular.',
+    indicacion: 'Piel sensible, reactiva, con barrera alterada, eritema persistente. Ideal como coadyuvante en recuperación post-láser, microneedling, peelings y para pieles con rosácea controlada.',
+    resultado: 'Piel reparada, calmada, fortalecida y con mayor tolerancia.',
+    presentacion: 'Portafolio inyectable estéril 10 mL. Vial ámbar con tapa dorada. Uso microneedling estéril. Uso profesional exclusivo.'
+  },
+  {
+    id: 'coleccion-glow-bright',
+    category: 'coleccion',
+    image: 'imagenes/coleccion/glow-bright.png',
+    title: 'PERFECT SKIN - GLOW BRIGHT - SÉRUM DESPIGMENTANTE',
+    subtitle: 'Iluminador intensivo de alta potencia',
+    subtitle2: 'Su fórmula magistral despigmentante actúa sobre manchas solares, melasma y tono desigual, revelando una piel radiante y uniforme.',
+    activos: 'TXA, Kójico, Fítico, Cobre, Glutatión, Arbutina',
+    beneficios: [
+      'Reduce manchas oscuras y melasma',
+      'Unifica el tono y aporta luminosidad',
+      'Antioxidante y antimanchas'
+    ],
+    uso: 'Aplicar 3-4 gotas por la noche sobre rostro limpio.',
+    extra: 'Ideal para: Piel con manchas, tono opaco y desigual.'
+  },
+  {
+    id: 'coleccion-adn-salmon',
+    category: 'coleccion',
+    image: 'imagenes/coleccion/adn-salmon-exo-microtech.png',
+    title: 'PERFECT SKIN - ADN SALMON EXO + MICROTECH',
+    subtitle: 'Biotecnología japonesa — fórmula magistral',
+    subtitle2: 'Suero regenerador de alta pureza con PDRN de salmón japonés grado farmacéutico, exosomas y sistema Microtech Delivery.',
+    sections: [
+      {
+        title: '¿QUÉ ES?',
+        text: 'Suero regenerador de alta pureza formulado con PDRN de Salmón de origen japonés grado farmacéutico. Fusionado con Exosomas y sistema Microtech Delivery para reparación profunda del ADN, unificación del tono y efecto glow natural.'
+      },
+      {
+        title: 'INGREDIENTES CLAVE',
+        items: [
+          'PDRN Salmón Japonés 2%: Grado farmacéutico, alta pureza y bajo peso molecular. Repara ADN celular y estimula colágeno.',
+          'Exosomas: Potencian regeneración celular.',
+          'Microtech Delivery System: Transporte transdérmico japonés para penetración profunda.',
+          'Ácido Hialurónico + Niacinamida: Hidratación y unificación del tono.'
+        ]
+      },
+      {
+        title: '¿CÓMO SE USA?',
+        paragraphs: [
+          'Frecuencia: Todos los días, 7 días a la semana. Tratamiento regenerador.',
+          'Aplicación: 2 veces al día, mañana y noche. En pieles sensibles, iniciar solo por la noche 5 días, luego 2 veces.'
+        ],
+        steps: [
+          'Limpiar rostro.',
+          'Aplicar 3 a 4 gotas en rostro, cuello y escote.',
+          'Masajear suave hasta absorción total.',
+          'Sellar con hidratante.',
+          'De día, finalizar con bloqueador. Obligatorio.'
+        ]
+      },
+      {
+        title: '¿ES OBLIGATORIO EL BLOQUEADOR?',
+        text: 'SÍ, 100% OBLIGATORIO. Sin fotoprotección no hay resultados. El PDRN japonés repara, pero el sol vuelve a pigmentar. SPF 50, 2 a 3 veces al día cada 3-4 horas.'
+      },
+      {
+        title: '¿PARA QUIÉN ES?',
+        items: [
+          'Pieles con marcas de acné y textura irregular.',
+          'Manchas post-inflamatorias y tono desigual.',
+          'Piel opaca, sin vida y sin luminosidad.',
+          'Primeras líneas y poro dilatado.',
+          'Pieles post-peeling y post-láser.',
+          'Todo tipo de piel, de 20 a 60 años.'
+        ]
+      },
+      {
+        title: '¿EN CUÁNTO TIEMPO SE VEN LOS RESULTADOS?',
+        items: [
+          'Día 3 a 7: Hidratación profunda, suavidad y primer glow.',
+          'Semana 2 a 3: Tono unificado, poro cerrado, marcas más claras.',
+          'Mes 1: Textura reparada visible.',
+          'Mes 2 a 3: Resultado magistral completo. Colágeno nuevo desde el interior.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'coleccion-lift',
+    category: 'coleccion',
+    image: 'imagenes/coleccion/lift.png',
+    title: 'PERFECT SKIN - LIFT - SÉRUM REAFIRMANTE',
+    subtitle: 'Sérum tensor de efecto lifting',
+    subtitle2: 'Estimula la producción natural de colágeno y elastina, redefiniendo el óvalo facial y mejorando la firmeza.',
+    activos: 'Cobre GHK-Cu, Péptidos de Cobre',
+    beneficios: [
+      'Efecto lifting y reafirmante inmediato',
+      'Estimula colágeno y elastina',
+      'Reduce flacidez y líneas de expresión'
+    ],
+    uso: 'Aplicar mañana y noche con movimientos ascendentes.',
+    extra: 'Ideal para: Piel con flacidez, pérdida de firmeza.'
+  },
+  {
+    id: 'coleccion-adn-glow',
+    category: 'coleccion',
+    image: 'imagenes/coleccion/adn-glow.png',
+    title: 'PERFECT SKIN - ADN GLOW - SÉRUM ILUMINADOR',
+    subtitle: 'El secreto de la piel de porcelana',
+    subtitle2: 'Tecnología regenerativa de ADN que repara a nivel celular e ilumina desde el interior con efecto glow de alta definición.',
+    activos: 'PDRN, Exosomas, Glutatión',
+    beneficios: [
+      'Regeneración celular avanzada',
+      'Efecto glow luminoso y piel de porcelana',
+      'Repara y rejuvenece'
+    ],
+    uso: 'Aplicar 3-4 gotas por la noche como tratamiento intensivo.',
+    extra: 'Ideal para: Piel apagada, con signos de fatiga y envejecimiento.'
+  },
+  {
+    id: 'coleccion-adn-intensive-repair',
+    category: 'coleccion',
+    image: 'imagenes/coleccion/adn-intensive-repair.png',
+    title: 'PERFECT SKIN - ADN INTENSIVE REPAIR - SÉRUM REPARADOR',
+    subtitle: 'Reparador intensivo barrera',
+    subtitle2: 'Calma, repara y fortalece la barrera cutánea. Ideal post-procedimientos, piel sensible o dañada.',
+    activos: 'PDRN, Exosomas, Centella Asiática',
+    beneficios: [
+      'Repara barrera cutánea dañada',
+      'Calma enrojecimiento y sensibilidad',
+      'Regeneración intensiva'
+    ],
+    uso: 'Aplicar mañana y noche sobre piel limpia. Puede usarse como calmante.',
+    extra: 'Ideal para: Piel sensible, sensibilizada, post-tratamiento.'
+  },
+  {
+    id: 'benzo-clean-premium',
+    category: 'jabon',
+    image: 'imagenes/jabones/benzo-clean-premium.png',
+    title: 'PERFECT SKIN - JABÓN DE BENZO CLEAN PREMIUM',
+    subtitle: 'Limpieza profunda · Cuidado diario',
+    caracteristicas: [
+      'Fórmula Magistral',
+      'Limpieza Profunda',
+      'Apariencia de Poros Desobstruidos',
+      'Textura Equilibrada',
+      'Sensación de Pureza',
+      'Cuidado Diario'
+    ],
+    notaEmpaque: 'Tratamiento efectivo para el acné grado 2, reduce bacterias y desobstruye poros a base de peróxido de benzoilo.'
+  },
+  {
+    id: 'vitamina-premium',
+    category: 'jabon',
+    image: 'imagenes/jabones/vitamina-premium.png',
+    title: 'PERFECT SKIN - JABÓN VITAMINA PREMIUM (Leche de Cabra)',
+    subtitle: 'Leche de Cabra · Renueva e hidrata',
+    caracteristicas: [
+      'Fórmula Magistral',
+      'Renueva e Hidrata',
+      'Mejora Elasticidad y Firmeza',
+      'Textura Suave',
+      'Aspecto Luminoso',
+      'Cuidado Diario'
+    ],
+    notaEmpaque: 'Contiene Colágeno, Elastina, B3, Vitamina E y Germen de Trigo para renovar, hidratar y mejorar la elasticidad y firmeza de la piel.'
+  },
+  {
+    id: 'antiacne-premium',
+    category: 'jabon',
+    image: 'imagenes/jabones/antiacne-premium.png',
+    title: 'PERFECT SKIN - JABÓN ANTIACNÉ PREMIUM',
+    subtitle: 'Limpieza de poros · Sensación fresca',
+    caracteristicas: [
+      'Fórmula Magistral',
+      'Limpieza de Poros',
+      'Apariencia Más Uniforme',
+      'Textura Suave',
+      'Sensación Fresca',
+      'Cuidado Diario'
+    ],
+    notaEmpaque: 'Contiene Ácido Salicílico y Ácido Láctico para combatir el acné y poros, hidratar y suavizar la piel.'
+  },
+  {
+    id: 'aclarante-premium',
+    category: 'jabon',
+    image: 'imagenes/jabones/aclarante-premium.png',
+    title: 'PERFECT SKIN - JABÓN ACLARANTE PREMIUM',
+    subtitle: 'Aclaración y tono uniforme',
+    caracteristicas: [
+      'Fórmula Magistral',
+      'Aclaración y Tono Uniforme',
+      'Reduce Apariencia de Manchas',
+      'Textura Suave',
+      'Aspecto Luminoso',
+      'Cuidado Diario'
+    ],
+    notaEmpaque: 'Contiene Ácido Kójico, Ácido Glicólico, Ácido Láctico y Vitamina C para la aclaración y unificación del tono, ayudando a reducir manchas e hiperpigmentación.'
   }
 ];
 
-const COMING_SOON = {
-  bloqueador: 'Próximamente — Protección solar de amplio espectro SPF 50+.',
-  jabon: 'Próximamente — Limpiadores suaves para todo tipo de piel.',
-  tonico: 'Próximamente — Equilibrio y preparación para tu rutina de cuidado.',
-  limpiador: 'Próximamente — Primera etapa esencial de tu rutina Perfect Skin.',
-  exfoliante: 'Próximamente — Renovación celular para una piel radiante.'
-};
+const COMING_SOON = {};
