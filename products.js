@@ -16,10 +16,14 @@ const CATEGORY_INTRO = {
 
 const CATEGORIES = [
   { id: 'serum', name: 'Sérum' },
-  { id: 'serum-coleccion', name: 'PERFECT SKIN CLINICAL' },
-  { id: 'coleccion', name: 'PERFECT SKIN - COLECCIÓN' },
+  { id: 'jabon', name: 'Jabones' },
   { id: 'cremas', name: 'Cremas' },
-  { id: 'jabon', name: 'Jabón' }
+  { id: 'mascarilla', name: 'Mascarillas' },
+  { id: 'coleccion', name: 'Serum Colección' },
+  { id: 'exfoliantes', name: 'Exfoliantes' },
+  { id: 'fotoprotectores', name: 'Fotoprotectores' },
+  { id: 'espumas', name: 'Espumas Limpiadoras' },
+  { id: 'serum-coleccion', name: 'Vial DR PEN' }
 ];
 
 const PRODUCTS = [
@@ -222,6 +226,66 @@ const PRODUCTS = [
     image: 'imagenes/cremas/resveratrol-retinoico.png',
     title: 'PERFECT SKIN - Resveratrol + Retinoico',
     subtitle: 'Anti-Edad 35+'
+  },
+  {
+    id: 'reafirmante-intenso',
+    category: 'cremas',
+    image: 'imagenes/cremas/reafirmante-intenso.png',
+    title: 'PERFECT SKIN - Crema Anti-Edad Reafirmante Intenso 35+ | 50g',
+    subtitle: 'Retinol + Aminoácidos',
+    subtitle2: 'Fórmula dual potente · Reparadora',
+    beneficios: [
+      'ANTI-EDAD: Retinol que renueva y reduce arrugas y líneas finas',
+      'REAFIRMANTE: Mejora firmeza y elasticidad de la piel caída',
+      'REPARA: Los aminoácidos reparan la barrera y evitan la irritación del retinol'
+    ],
+    uso: 'Solo de noche. Aplicar en rostro, cuello y escote limpios.',
+    extra: 'Crema nocturna rica para piel 35+ exigente.'
+  },
+  {
+    id: 'despigmentante-corporal',
+    category: 'cremas',
+    image: 'imagenes/cremas/despigmentante-corporal.png',
+    title: 'PERFECT SKIN - Crema Despigmentante Corporal Premium Aclarante | 50g',
+    subtitle: 'Ácido Kójico + Tranexámico + Láctico',
+    subtitle2: 'Aclara - Unifica - Renueva',
+    beneficios: [
+      'ACLARA: Aclara la apariencia de zonas oscuras',
+      'UNIFICA: Unifica el tono y reduce manchas oscuras corporales',
+      'RENUEVA: Renueva y suaviza la textura de piel gruesa'
+    ],
+    uso: 'Día y noche. Aplicar en zonas oscuras limpias.',
+    extra: 'Zonas: Axilas, cuello, entrepiernas, codos y rodillas.'
+  },
+  {
+    id: 'despigmentante-facial',
+    category: 'cremas',
+    image: 'imagenes/cremas/despigmentante-facial.png',
+    title: 'PERFECT SKIN - Crema Despigmentante Facial Premium Aclarante | 50g',
+    subtitle: 'Ácido Kójico + Tranexámico + Láctico',
+    subtitle2: 'Unifica - Ilumina - Suaviza',
+    beneficios: [
+      'UNIFICA: Unifica el tono y reduce la apariencia de manchas',
+      'ILUMINA: Devuelve la luminosidad natural',
+      'SUAVIZA: Suaviza la textura y la apariencia de poros'
+    ],
+    uso: 'Aplicar de noche sobre el rostro limpio.',
+    importante: 'Usar protector SPF50 durante el día siguiente.',
+    extra: 'Tratamiento facial nocturno para manchas solares y post-acné.'
+  },
+  {
+    id: 'crema-reparadora-post',
+    category: 'cremas',
+    image: 'imagenes/cremas/crema-reparadora-post.png',
+    title: 'PERFECT SKIN - Crema Reparadora Post-Procedimiento | 70g',
+    subtitle: 'Centella + Pantenol + Calmantes',
+    subtitle2: 'Post-procedimiento · Profesional · Reparadora',
+    beneficios: [
+      'REPARADOR: Acelera la recuperación y calma post-tratamiento',
+      'HIDRATANTE: Nutre y restaura la barrera cutánea'
+    ],
+    uso: 'Aplicar capa generosa post peeling, CO2, HIFU y láser.',
+    extra: 'Crema suave de uso profesional en cabina.'
   },
   {
     id: 'glow-bright',
@@ -459,7 +523,74 @@ const PRODUCTS = [
       'Cuidado Diario'
     ],
     notaEmpaque: 'Contiene Ácido Kójico, Ácido Glicólico, Ácido Láctico y Vitamina C para la aclaración y unificación del tono, ayudando a reducir manchas e hiperpigmentación.'
-  }
+  },
+  {
+    id: 'aloe-frio-calmante',
+    category: 'mascarilla',
+    image: 'imagenes/mascarillas/aloe-frio-calmante.png',
+    title: 'PERFECT SKIN - Mascarilla Aloe Frío Calmante | 70g',
+    subtitle: 'Aloe Vera + Extractos Calmantes',
+    subtitle2: 'Post-procedimiento · Profesional · Calmante',
+    beneficios: [
+      'CALMA: Reduce rojeces y ardor post-tratamiento',
+      'HIDRATANTE: Hidrata y refresca la piel sensibilizada'
+    ],
+    uso: 'Aplicar capa generosa post peeling, CO2, HIFU y láser.',
+    extra: 'Gel frío de uso profesional en cabina.'
+  },
+  ...[
+    ['antiage-ghk-lift', 'Exfoliante Antiage GHK Lift', 'GHK & Péptidos Colágeno', 'Movimientos ascendentes'],
+    ['adn-glow', 'Exfoliante ADN Glow', 'Iluminadora Prime Exosomas', 'Movimientos ascendentes'],
+    ['glow-bright-manchas', 'Exfoliante Glow Bright Manchas', '5% Arbutina + Niacinamida', 'Movimientos ascendentes'],
+    ['suave-reparadora', 'Exfoliante Suave Reparadora', '3% Mandélico + Gluconolactona', 'Movimientos ascendentes'],
+    ['acne', 'Exfoliante Acné', '7% Salicílico + Glicólico + Niacinamida', 'Movimientos circulares suaves']
+  ].map(([slug, name, activos, masaje]) => ({
+    id: `exfoliante-${slug}`,
+    category: 'exfoliantes',
+    image: `imagenes/exfoliantes/${slug}.png`,
+    title: `PERFECT SKIN - ${name} | 70g`,
+    subtitle: activos,
+    uso: `Nocturno. 1) Limpia: rostro limpio y seco. 2) Aplica: capa fina uniforme. 3) Masajea: ${masaje.toLowerCase()}. 4) Enjuaga: dejar actuar 5-10 min y luego enjuagar con agua tibia.`
+  })),
+  ...[
+    ['adn-glow', 'Espuma Limpiadora ADN Glow', 'Iluminadora · Prime Exosomas'],
+    ['glow-bright', 'Espuma Limpiadora Glow Bright', 'Despigmentante y Antiaging'],
+    ['acne', 'Espuma Limpiadora Acné', 'Control Sebo · Purifica'],
+    ['lift', 'Espuma Limpiadora Lift', 'Reafirmante GHK & Péptidos']
+  ].map(([slug, name, subtitle]) => ({
+    id: `espuma-${slug}`,
+    category: 'espumas',
+    image: `imagenes/espumas/${slug}.png`,
+    title: `PERFECT SKIN - ${name} | 200ml`,
+    subtitle
+  })),
+  ...[
+    ['ghk-cu', 'GHK-Cu Regenerador', 'Reparación bioactiva GHK-Cu + Péptidos + Microtech', '2% High-Potency · Regenerador',
+      ['Estimula colágeno con péptido GHK-Cu', 'Repara y regenera tejido dañado', 'Hidrata y mejora elasticidad']],
+    ['antioxidante', 'Antioxidante Glutatión', 'Escudo antioxidante Glutatión + Niacinamida + Microtech', '2% High-Potency · Defensor',
+      ['Antioxidante, combate radicales libres', 'Ilumina y reduce manchas con glutatión', 'Unifica tono con niacinamida y glow']],
+    ['pdrn', 'PDRN ADN Salmón', 'ADN de Salmón (PDRN) + Exosomas + Microtech', '2% High-Potency',
+      ['Regeneración celular profunda con PDRN', 'Repara barrera dañada y mejora elasticidad', 'Hidratación intensa y glow con ácido hialurónico']],
+    ['vitamina-c', 'Vitamina C+E+B5 Iluminador', 'Potencia antioxidante Vitamina C + E + B5 + Microtech', '2% High-Potency · Fórmula iluminadora',
+      ['Ilumina y aporta glow instantáneo con vitamina C', 'Antioxidante, protege del fotoenvejecimiento', 'Unifica tono con vitamina E y B5']],
+    ['antiedad', 'Anti Edad Retinoico', 'Retinoico + Ácido Hialurónico + Microtech', '2% High-Potency · Antiedad',
+      ['Reduce arrugas y líneas finas con retinoico', 'Reafirma y mejora elasticidad', 'Rejuvenece e hidrata profundo']],
+    ['despigmentante', 'Despigmentante Kójico', 'Ácido Kójico + Arbutina + Microtech', '2% High-Potency · Aclarador',
+      ['Blanqueamiento natural, reduce manchas oscuras', 'Inhibe melanina con ácido kójico y arbutina', 'Unifica tono y aporta glow con niacinamida']]
+  ].map(([slug, name, subtitle, subtitle2, [skin, firming, barrier]]) => ({
+    id: `fotoprotector-${slug}`,
+    category: 'fotoprotectores',
+    image: `imagenes/fotoprotectores/${slug}.png`,
+    title: `PERFECT SKIN - Fotoprotector FPS +50 ${name} | 100ml`,
+    subtitle,
+    subtitle2,
+    beneficios: [
+      `SKIN SUPPORT: ${skin}`,
+      `FIRMING CARE: ${firming}`,
+      `BARRIER CARE: ${barrier}`
+    ],
+    extra: 'Protección UVB · UVA · IR. Fórmula dermatológica de triple protección.'
+  }))
 ];
 
 const COMING_SOON = {};
