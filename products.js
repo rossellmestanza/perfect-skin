@@ -336,6 +336,15 @@ const PRODUCTS = [
     presentacion: 'Portafolio inyectable estéril 10 mL. Vial ámbar con tapa dorada. Uso microneedling estéril. Uso profesional exclusivo.'
   },
   {
+    id: 'exosomas-panax-ginseng',
+    category: 'serum-coleccion',
+    image: 'imagenes/serum-coleccion/exosomas-panax-ginseng.png',
+    title: 'PERFECT SKIN - EXOSOMAS BIOACTIVOS DE PANAX GINSENG | FRACCIÓN EXOSOMAL PURIFICADA',
+    subtitle: 'Fracción exosomal purificada',
+    composicion: 'Exosomas bioactivos de Panax Ginseng (fracción exosomal purificada).',
+    presentacion: 'Portafolio inyectable estéril 10 mL. Vial ámbar con tapa dorada. Uso microneedling estéril. Uso profesional exclusivo.'
+  },
+  {
     id: 'coleccion-glow-bright',
     category: 'coleccion',
     image: 'imagenes/coleccion/glow-bright.png',
